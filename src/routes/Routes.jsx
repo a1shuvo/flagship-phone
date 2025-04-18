@@ -14,7 +14,9 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                Component: Home
+                Component: Home,
+                hydrateFallbackElement: <p>Data Loading. Please Wait...</p>,
+                loader: () => (fetch('phones.json'))
             },
             {
                 path: '/about',
