@@ -4,12 +4,13 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Favorites from "../pages/Favorites";
 import PhoneDetails from "../pages/PhoneDetails";
+import ErrorPage from "../pages/ErrorPage";
 
 export const router = createBrowserRouter([
     {
         path: '/',
         Component: MainLayout,
-        errorElement: <Error></Error>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 index: true,
