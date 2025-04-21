@@ -18,7 +18,10 @@ const Hero = ({ handleSearch }) => {
                     Best place to browse, search, view details and purchase of top
                     flagship phones <br /> of the current time - FlagshipFaceOff
                 </p>
-                <form onSubmit={(e)=>handleSearch(e, searchText)} className='flex flex-col justify-center items-center w-full mb-4 md:flex-row md:px-24'>
+                <form onSubmit={(e)=>{
+                    handleSearch(e, searchText);
+                    setSearchText('');
+                }} className='flex flex-col justify-center items-center w-full mb-4 md:flex-row md:px-24'>
                     <input value={searchText} onChange={e=>setSearchText(e.target.value)} placeholder='Search Phone by Name' type='text' className='w-2/3 h-12 px-4 mb-3  bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:outline-none focus:shadow-outline' />
                     <button type='submit' className="relative inline-block text-lg group cursor-pointer">
                         <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">

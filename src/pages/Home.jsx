@@ -9,10 +9,11 @@ const Home = () => {
 
     const handleSearch = (e, text) => {
         e.preventDefault();
-        const searchedPhones = phones.filter(
+        if (text === '') return setPhones(data);
+        const searchedPhones = data.filter(
             phone =>
-                phone.name.toLowerCase().split(' ').includes(text.toLowerCase()) ||
-                phone.brand.toLowerCase().split(' ').includes(text.toLowerCase())
+                phone?.name?.toLowerCase().split(' ').includes(text.toLowerCase()) ||
+                phone?.brand?.toLowerCase().split(' ').includes(text.toLowerCase())
         )
         setPhones(searchedPhones);
     }
